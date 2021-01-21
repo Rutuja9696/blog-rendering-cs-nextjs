@@ -1,19 +1,28 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
+import Image from "next/image";
 
 //query
 import getAllBlogs from "../contentstack/queries/getAllBlogs";
 
 //function to display home page
 export default function Home(props) {
-  let banner = props.banner;
+  let blogs = props.banner;
+  // console.log(blogs);
   return (
     <>
-      {banner.map((banner, i) => {
+      {blogs.map((banner, i) => {
         return (
-          <div key={i}>
-            <img src={banner.blogimage.url} />
-          </div>
+          <>
+            <Link href={"/blog/" + banner.uid}>
+              <a>
+                <div key={i}>
+                  <img src={banner.blogimage.url} alt="" />
+                </div>
+              </a>
+            </Link>
+          </>
         );
       })}
     </>
@@ -22,6 +31,6 @@ export default function Home(props) {
 export const getStaticProps = async () => {
   const banner = await getAllBlogs("blogrenderingnext_rutuja");
   return {
-    props: { banner: [...banner] },
+    props: { banner: [...banner[0]] },
   };
 };
