@@ -1,29 +1,32 @@
 import Link from "next/link";
+import styles from "../../styles/details.module.css";
 //queries
 import getBlogById from "../../contentstack/queries/getBlogById";
 import getAllBlogs from "../../contentstack/queries/getAllBlogs";
 //components
 import Header from "../../components/header";
 import Footer from "../../components/footer";
+
 function Blog(props) {
   return (
-    <div>
+    <div className={styles.container}>
       <Header header={props.header} />
-
-      <img src={props.banner.blogimage.url} alt={props.banner.blogtitle} />
-      <h3>{props.banner.blogtitle}</h3>
-      <p>{props.banner.blogcontent}</p>
-      <div>
-        <h4>Related Links</h4>
-        {props.banner.relatedlinks.map((link) => {
-          return (
-            <>
-              <Link href={link.relatedlinks[0].uid}>
-                <p>{link.blogtitle}</p>
-              </Link>
-            </>
-          );
-        })}
+      <div className={styles.detailsContainer}>
+        <img src={props.banner.blogimage.url} alt={props.banner.blogtitle} />
+        <h3>{props.banner.blogtitle}</h3>
+        <p>{props.banner.blogcontent}</p>
+        <div>
+          <h4>Related Links</h4>
+          {props.banner.relatedlinks.map((link) => {
+            return (
+              <>
+                <Link href={link.relatedlinks[0].uid}>
+                  <p>{link.blogtitle}</p>
+                </Link>
+              </>
+            );
+          })}
+        </div>
       </div>
       <Footer footer={props.footer} />
     </div>
