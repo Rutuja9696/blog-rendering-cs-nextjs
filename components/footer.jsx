@@ -1,31 +1,27 @@
 import Link from "next/link";
-// import footerStyles from "../styles/Footer.module.css";
-// import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
+import styles from "../styles/footer.module.css";
 
 export default function Footer(props) {
   let footer = props.footer[0][0];
   console.log(footer);
   return (
-    <div>
+    <div className={styles.container}>
       <p>{footer.copyright_text} </p>
-      <ul>
+      <div className={styles.socialIcons}>
         {footer.social_links.map((link) => {
           return (
-            <li>
-              <Link href={link.link_url}>
-                <a target="_new">
-                  <img
-                    src={link.social_image.url}
-                    alt={link.link_title}
-                    width={30}
-                    height={30}
-                  />
-                </a>
-              </Link>
-            </li>
+            <Link href={link.link_url}>
+              <img
+                src={link.social_image.url}
+                alt={link.link_title}
+                width={40}
+                height={40}
+                className={styles.icon}
+              />
+            </Link>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 }
