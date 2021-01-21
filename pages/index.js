@@ -9,19 +9,29 @@ export default function Home(props) {
   let blogs = props.banner;
   return (
     <>
-      {blogs.map((banner, i) => {
-        return (
-          <>
-            <Link href={"/blog/" + banner.uid}>
-              <a>
+      <div className={styles.container}>
+        <h1>"Take a good book to bed with you — books do not snore.” </h1>
+        <div className={styles.cardContainer}>
+          {blogs.map((banner, i) => {
+            return (
+              <div>
                 <div key={i}>
-                  <img src={banner.blogimage.url} alt="" />
+                  <Link href={"/blog/" + banner.uid}>
+                    <a>
+                      <div className={styles.card}>
+                        <img
+                          src={banner.blogimage.url}
+                          alt={props.banner.blogtitle}
+                        />
+                      </div>
+                    </a>
+                  </Link>
                 </div>
-              </a>
-            </Link>
-          </>
-        );
-      })}
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </>
   );
 }
