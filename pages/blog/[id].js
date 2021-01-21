@@ -1,10 +1,15 @@
+import Link from "next/link";
+//queries
 import getBlogById from "../../contentstack/queries/getBlogById";
 import getAllBlogs from "../../contentstack/queries/getAllBlogs";
-import Link from "next/link";
-
+//components
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 function Blog(props) {
   return (
     <div>
+      <Header header={props.header} />
+
       <img src={props.banner.blogimage.url} alt={props.banner.blogtitle} />
       <h3>{props.banner.blogtitle}</h3>
       <p>{props.banner.blogcontent}</p>
@@ -20,15 +25,19 @@ function Blog(props) {
           );
         })}
       </div>
+      <Footer footer={props.footer} />
     </div>
   );
 }
 export const getStaticProps = async (context) => {
-  console.log(context.params.id);
   let data = await getBlogById(`${context.params.id}`);
+  const header = await getAllBlogs("01_blognavigation_rutuja");
+  const footer = await getAllBlogs("01_blogfooter_rutuja");
   return {
     props: {
+      header: [...header],
       banner: { ...data },
+      footer: [...footer],
     },
   };
 };
