@@ -1,7 +1,5 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
 //query
 import getAllBlogs from "../contentstack/queries/getAllBlogs";
@@ -9,7 +7,6 @@ import getAllBlogs from "../contentstack/queries/getAllBlogs";
 //function to display home page
 export default function Home(props) {
   let blogs = props.banner;
-  // console.log(blogs);
   return (
     <>
       {blogs.map((banner, i) => {
