@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0px 0px 8px 0px rgb(34, 31, 31);
+}
+.logo {
+  padding: 15px 15px;
+  margin-left: 4%;
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin-right: 4%;
+}
+
+.link {
+  padding: 6px 15px;
+  color: white;
+  text-shadow: 2px 2px rgb(54, 49, 49);
+  font-size: 22px;
+}

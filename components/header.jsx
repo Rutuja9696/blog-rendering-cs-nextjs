@@ -1,33 +1,30 @@
 import Link from "next/link";
-
+import styles from "../styles/header.module.css";
 function Header(props) {
   let header = props.header[0][0];
-  console.log(header);
   return (
     <div>
-      <div>
+      <div className={styles.container}>
         <Link href="/">
-          <div>
+          <div className={styles.logo}>
             <img
               src={header.company_logo.url}
               alt="logo"
-              width={50}
-              height={50}
+              width={70}
+              height={70}
             />
           </div>
         </Link>
-        <div>
-          <p>
-            {header.link.map((link) => {
-              return (
-                <div>
-                  <Link href={link.href}>
-                    <a>{link.title}</a>
-                  </Link>
-                </div>
-              );
-            })}
-          </p>
+        <div className={styles.links}>
+          {header.link.map((link) => {
+            return (
+              <div>
+                <Link href={link.href}>
+                  <p className={styles.link}>{link.title}</p>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

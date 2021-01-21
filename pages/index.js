@@ -10,8 +10,8 @@ export default function Home(props) {
   let blogs = props.banner;
   return (
     <>
-      <Header header={props.header} />
       <div className={styles.container}>
+        <Header header={props.header} />
         <h1>"Take a good book to bed with you — books do not snore.” </h1>
         <div className={styles.cardContainer}>
           {blogs.map((banner, i) => {
@@ -33,8 +33,8 @@ export default function Home(props) {
             );
           })}
         </div>
+        <Footer footer={props.footer} />
       </div>
-      <Footer footer={props.footer} />
     </>
   );
 }
