@@ -6,7 +6,7 @@ export default function getAllBlogs(contentType) {
     .find()
     .then(
       function success(result) {
-        return result[0];
+        return result;
       },
       function error(err) {
         // err object
