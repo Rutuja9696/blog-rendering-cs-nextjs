@@ -20,3 +20,28 @@
 .icon {
   margin: 0px 12px;
 }
+@media (max-width: 790px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (max-width: 497px) {
+  .container p {
+    font-size: 12px;
+  }
+  .icon {
+    margin: auto;
+    width: 5vh;
+    height: 5vh;
+  }
+  .socialIcons {
+    padding: 10px 5px;
+  }
+}
+@media (max-width: 90px) {
+  .icon {
+    width: 3vh;
+    height: 3vh;
+  }
+}
