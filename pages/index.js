@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import Header from "../components/header";
+import Footer from "../components/footer";
 //query
 import getAllBlogs from "../contentstack/queries/getAllBlogs";
 
@@ -33,13 +34,16 @@ export default function Home(props) {
           })}
         </div>
       </div>
+      <Footer footer={props.footer} />
     </>
   );
 }
 export const getStaticProps = async () => {
   const header = await getAllBlogs("01_blognavigation_rutuja");
   const banner = await getAllBlogs("blogrenderingnext_rutuja");
+  const footer = await getAllBlogs("01_blogfooter_rutuja");
+
   return {
-    props: { header: [...header], banner: [...banner[0]] },
+    props: { header: [...header], banner: [...banner[0]], footer: [...footer] },
   };
 };
