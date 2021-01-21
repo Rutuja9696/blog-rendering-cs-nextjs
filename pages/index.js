@@ -4,14 +4,14 @@ import styles from "../styles/Home.module.css";
 //query
 import getAllBlogs from "../contentstack/queries/getAllBlogs";
 
-//function to get all blogs
+//function to display home page
 export default function Home(props) {
   let banner = props.banner;
   return (
     <>
-      {props.banner.map((banner) => {
+      {banner.map((banner, i) => {
         return (
-          <div>
+          <div key={i}>
             <img src={banner.blogimage.url} />
           </div>
         );
