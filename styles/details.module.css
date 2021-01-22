@@ -59,5 +59,7 @@
   }
   .detailsContainer {
     font-size: 7px;
+    margin: 1vh auto;
+    padding: 0px;
   }
 }

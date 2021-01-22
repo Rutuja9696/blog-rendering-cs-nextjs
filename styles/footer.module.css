@@ -40,6 +40,9 @@
   }
 }
 @media (max-width: 90px) {
+  .socialIcons {
+    flex-direction: column;
+  }
   .icon {
     width: 3vh;
     height: 3vh;

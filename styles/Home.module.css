@@ -71,6 +71,27 @@
   }
   .cardContainer {
     flex-direction: column;
-    margin: 5vh 20vh;
+    margin: 3vh;
+    margin-left: 30vw;
+  }
+}
+@media (max-width: 320px) {
+  .card img {
+    width: 15vh;
+    height: 25vh;
+  }
+}
+@media (max-width: 200px) {
+  .container h1 {
+    font-size: 12px;
+  }
+  .card img {
+    width: 30vw;
+    height: 40vw;
+  }
+  .cardContainer {
+    margin-left: 30vw;
+    margin-top: 0;
+    padding-top: 0;
   }
 }
