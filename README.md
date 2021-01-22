@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Live Demo Link
 
-click to view live demo [here.]()
+click to view live demo [here.](https://blog-rendering-cs-next.vercel.app/)
 
 ## Supported Routes
 
