@@ -12,7 +12,14 @@
   height: 100%;
 }
 .backButton {
+  width: 20vw;
+  margin: auto;
   padding: 7px;
-  border: 2px solid rgb(11, 245, 245);
-  border-radius: 10%;
+  border: 2px solid rgb(14, 66, 179);
+  border-radius: 2%;
+}
+@media (max-width: 340px) {
+  .backButton {
+    font-size: 8px;
+  }
 }
