@@ -17,13 +17,13 @@ function Blog(props) {
         <p>{props.banner.blogcontent}</p>
         <div>
           <h4>Related Links</h4>
-          {props.banner.relatedlinks.map((link) => {
+          {props.banner.relatedlinks.map((link, i) => {
             return (
-              <>
+              <div key={i}>
                 <Link href={link.relatedlinks[0].uid}>
                   <p>{link.blogtitle}</p>
                 </Link>
-              </>
+              </div>
             );
           })}
         </div>
