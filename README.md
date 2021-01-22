@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Blog Rendering -CMS
+
+This project renders blogs decribing trending books and its details. It is developed using Next.js and backend is integrated with CMS (Contentstack).Also fronted is hosted on vercel platform.
 
 ## Getting Started
 
@@ -32,3 +34,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Live Demo Link
+
+click to view live demo [here.]()
+
+## Supported Routes
+
+```
+/  - to display home page.
+/blog/:id  - to see details of selected card.
+```
+
+## Author
+
+- **Rutuja Patil** - _work by_ - [irutujapatil](https://github.com/Rutuja9696)
